@@ -32,7 +32,7 @@ pipeline {
           }
         stage ("Run docker compose") {
             steps {
-                 dir("springboot-angular-mysql-docker"){
+                 dir("PDS-Projet"){
                     sh " docker compose up -d"
                 }                
             }

@@ -1,5 +1,5 @@
 # Use a base image with Java 17 and a minimal Linux distribution
-FROM openjdk:11
+FROM openjdk:17-jdk-slim
 
 
 

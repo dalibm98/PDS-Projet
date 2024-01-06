@@ -12,7 +12,7 @@ pipeline {
         }
         stage ("Clone repo"){
             steps {
-                sh "git clone https://github.com/Youssef0409/PDS-Projet.git"
+                sh "git clone https://github.com/dalibm98/PDS-Projet.git"
             }
         }
         stage ("Generate frontend image") {

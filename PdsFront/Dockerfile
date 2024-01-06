@@ -5,8 +5,5 @@ COPY package*.json ./
 RUN npm install --force
 COPY . .
 RUN npm run build --force
-
-### STAGE 2: Run ###
-FROM nginx:1.17.1-alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist/PdsFront /usr/share/nginx/html
+EXPOSE 4200
+CMD ["npm", "start"]

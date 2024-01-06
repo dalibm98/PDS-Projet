@@ -1,11 +1,11 @@
 services:
 
-# Angular Application
+  # Angular Application
   angular-app:
     image: youssef0409/front:1.0.0
     ports:
       - "0.0.0.0:4200:80"
-      
+
   # Spring Boot Application
   spring-boot-app:
     image: youssef0409/back:1.0.0
@@ -35,6 +35,7 @@ services:
       - '0.0.0.0:3306:3306'
     volumes:
       - demo:/var/lib/mysql
-  # liste des volumes 
+
+# List of volumes
 volumes:
   demo:

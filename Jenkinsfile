@@ -26,7 +26,7 @@ pipeline {
      stage ("Generate backend image") {
     steps {
         dir("PDS-Projet/PdsBackend"){
-             sh "mvnw clean install"
+            sh "mvn clean install"
             sh "docker build -t back ."
         }
     }

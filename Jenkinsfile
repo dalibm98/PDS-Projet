@@ -10,7 +10,7 @@ pipeline {
                 deleteDir()
             }
         }
-        stage ("Clone repo"){
+        stage ("Clone repoo"){
             steps {
                 sh "git clone https://github.com/dalibm98/PDS-Projet.git"
             }

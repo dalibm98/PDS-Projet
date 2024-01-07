@@ -1,15 +1,9 @@
 
 FROM openjdk:17-jdk-slim
 
+
 VOLUME /tmp
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the packaged JAR file into the container at the defined working directory
-COPY target/gestion_freelances-0.0.1-SNAPSHOT.jar /app/gestion_freelances.jar
-
-# Expose the port that your Spring Boot application will run on
-EXPOSE 8080
-
-# Specify the command to run your Spring Boot application
-CMD ["java", "-jar", "gestion_freelances.jar"]
+EXPOSE 8081
+ARG JAR_FILE= target/gestion_freelances-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} gestion_freelances.jar
+ENTRYPOINT ["java","-jar","/gestion_freelances.jar"]

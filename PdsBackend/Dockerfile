@@ -1,7 +1,7 @@
 
 FROM openjdk:17-jdk-slim
 VOLUME /tmp
-EXPOSE 8081
+EXPOSE 8080
 
 WORKDIR /app
 

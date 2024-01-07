@@ -18,6 +18,7 @@ pipeline {
         stage ("Generate frontend image") {
             steps {
                  dir("PDS-Projet/PdsFront"){
+                     sh " mvn clean install " 
                     sh "docker build -t front ."
                 }                
             }

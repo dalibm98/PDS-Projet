@@ -18,7 +18,6 @@ pipeline {
      stage("Generate frontend image") {
     steps {
         dir("PDS-Projet/PdsFront") {
-            sh "./mvnw clean install"
             sh "docker build -t front ."
         }
     }
@@ -27,7 +26,7 @@ pipeline {
      stage ("Generate backend image") {
     steps {
         dir("PDS-Projet/PdsBackend"){
-        
+             sh "mvnw clean install"
             sh "docker build -t back ."
         }
     }

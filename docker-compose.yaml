@@ -35,6 +35,6 @@ services:
     ports:
       - "0.0.0.0:4200:4200"
 
-
 volumes:
   Gesti:
+

@@ -2,8 +2,7 @@ version: "3"
 services:
   # Spring Boot Application
   spring-boot-app:
-    image: back
-    build: ./PdsBackend
+    image: dalibm98/back:latest
     ports:
       - "0.0.0.0:8080:8080"
     environment:
@@ -29,9 +28,7 @@ services:
       - Gesti:/var/lib/mysql  
 
   front:
-    image: front
-    build: ./PdsFront
-    restart: always
+    image: dalibm98/front:latest
     ports:
       - "0.0.0.0:4200:4200"
 

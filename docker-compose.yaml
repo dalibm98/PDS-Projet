@@ -1,7 +1,7 @@
 version: "3"
 services:
   # Spring Boot Application
-  spring-boot-app:
+  back:
     image: dalibm98/back:latest
     ports:
       - "0.0.0.0:8080:8080"

@@ -22,14 +22,7 @@ pipeline {
                 }                
             }
         }
-        stage ("Generate backend image") {
-              steps {
-                   dir("PDS-Projet/PdsBackend"){
-            
-                      sh "docker build -t back ."
-                  }                
-              }
-          }
+     
         stage ("Run docker compose") {
             steps {
                  dir("PDS-Projet"){

@@ -26,7 +26,7 @@ services:
     ports:
       - '0.0.0.0:3306:3306' 
     volumes:
-      - demo:/var/lib/mysql  
+      - Gesti:/var/lib/mysql  
 
   front:
     image: front

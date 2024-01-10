@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: backend
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: votre_backend_image:latest
+        image: dalibm98/back:latest
         ports:
         - containerPort: 8080
         env:
@@ -49,7 +49,7 @@ kind: Deployment
 metadata:
   name: frontend-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: votre_frontend_image:latest
+        image: dalibm98/front:latest
         ports:
         - containerPort: 4200
 
@@ -95,7 +95,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: votre_mysql_image:latest
+        image: dalibm98 / mysql-gesti:latest
         ports:
         - containerPort: 3306
         env:

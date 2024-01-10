@@ -16,7 +16,7 @@ services:
 
   # MySQL Database
   mysql:
-    image: mysql:5.7
+    image: dalibm98/mysql-gesti:latest
     restart: always
     environment:
       MYSQL_DATABASE: 'Gesti'

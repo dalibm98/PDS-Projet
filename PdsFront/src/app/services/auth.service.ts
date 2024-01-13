@@ -15,7 +15,7 @@ export class AuthService {
   
   private refreshTokenUrl = 'http://spring-boot-app-service:8080/api/v1/auth/refresh-token';
   login(loginRequest: LoginRequest): Observable<any> {
-    return this.http.post<any>('http://localhost:8080/api/v1/auth/authenticate', loginRequest);
+    return this.http.post<any>('http://spring-boot-app-service:8080/api/v1/auth/authenticate', loginRequest);
   }
 
   decodeToken(token: string): any {

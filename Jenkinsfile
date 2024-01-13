@@ -15,6 +15,13 @@ pipeline {
                 sh "git clone https://github.com/dalibm98/PDS-Projet.git"
             }
         }
+           stage ("Generate frontend image") {
+            steps {
+                 dir("PDS-Projet/PdsFront"){
+                    sh "docker build -t front ."
+                }                
+            }
+        }
   
         stage ("Run docker compose") {
             steps {

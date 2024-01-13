@@ -13,7 +13,7 @@ import { User } from '../models/user';
 export class AuthService {
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
   
-  private refreshTokenUrl = 'http://localhost:8080/api/v1/auth/refresh-token';
+  private refreshTokenUrl = 'http://spring-boot-app-service:8080/api/v1/auth/refresh-token';
   login(loginRequest: LoginRequest): Observable<any> {
     return this.http.post<any>('http://localhost:8080/api/v1/auth/authenticate', loginRequest);
   }
@@ -22,7 +22,7 @@ export class AuthService {
     return this.jwtHelper.decodeToken(token);
   }
   register(registerRequest: RegisterRequest): Observable<any> {
-    return this.http.post<any>('http://localhost:8080/api/v1/auth/register', registerRequest);
+    return this.http.post<any>('http://spring-boot-app-service:8080/api/v1/auth/register', registerRequest);
   }
 
   getUserIdFromToken(): number | null {
@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   logout() {
-    const url = 'http://localhost:8080/api/v1/auth/logout';
+    const url = 'http://spring-boot-app-service:8080/api/v1/auth/logout';
     return this.http.post(url, null);
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
       Authorization: `Bearer ${authToken}`,
     });
 
-    const url = `http://localhost:8080/api/v1/users/email/${email}`;
+    const url = `http://spring-boot-app-service:8080/api/v1/users/email/${email}`;
     return this.http.get<User>(url, { 'headers': headers });
   }
 
@@ -89,7 +89,7 @@ export class AuthService {
       Authorization: `Bearer ${authToken}`,
     });
 
-    const url = 'http://localhost:8080/api/v1/auth/users';
+    const url = 'http://spring-boot-app-service:8080/api/v1/auth/users';
     return this.http.get<User[]>(url, { headers });
   }
 }

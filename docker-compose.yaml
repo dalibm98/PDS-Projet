@@ -28,7 +28,8 @@ services:
       - Gesti:/var/lib/mysql  
 
   front:
-    image: dalibm98/front:latest
+    image: frontend
+    build: ./PdsFront
     ports:
       - "0.0.0.0:4200:80"
 

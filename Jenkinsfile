@@ -18,7 +18,7 @@ pipeline {
            stage ("Generate frontend image") {
             steps {
                  dir("PDS-Projet/PdsFront"){
-                    sh "docker build -t front ."
+                    sh "docker build -t frontend ."
                 }                
             }
         }

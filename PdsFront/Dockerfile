@@ -9,4 +9,4 @@ RUN npm run build --force
 # Stage 2: Run with Nginx
 FROM nginx:1.17.1-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist/PdsFront/usr/share/nginx/html
+COPY --from=build /app/dist/pds-front/usr/share/nginx/html

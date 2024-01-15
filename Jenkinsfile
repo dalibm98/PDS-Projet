@@ -30,6 +30,19 @@ pipeline {
                 }                
             }
         }
+
+         stage('Push image to hub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u dalibm98 -p ${dockerhubpwd}'
+                        
+                    }
+                    sh 'docker push dalibm98/frontend-app
+                     sh 'docker push dalibm98/gestion_freelances'
+                }
+            }
+        }
   
         stage ("Run docker compose") {
             steps {

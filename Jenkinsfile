@@ -1,54 +1,44 @@
 pipeline {
-    agent any 
-    tools { 
+    agent any
+    tools {
         maven 'maven'
         nodejs 'NodeJS'
     }
     stages {
-        stage ("Clean up"){
+        stage("Clean up") {
             steps {
                 deleteDir()
             }
         }
-        stage ("Clone repo"){
+        stage("Clone repo") {
             steps {
                 sh "git clone https://github.com/dalibm98/PDS-Projet.git"
             }
         }
-           stage ("Generate frontend image") {
+        stage("Generate frontend image") {
             steps {
-                 dir("PDS-Projet/PdsFront"){
+                dir("PDS-Projet/PdsFront") {
                     sh "docker build -t dalibm98/frontend-app ."
-                }                
-            }
-        }
-             stage ("Generate backend image") {
-            steps {
-                 dir("PDS-Projet/PdsFront"){
-                     sh "mvn  clean install"
-                    sh "docker build -t dalibm98/gestion_freelances ."
-                }                
-            }
-        }
-
-         stage('Push image to hub'){
-            steps{
-                script{
-                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
-                    sh 'docker login -u dalibm98 -p ${dockerhubpwd}'
-                        
-                    }
-                    sh 'docker push dalibm98/frontend-app
-                     sh 'docker push dalibm98/gestion_freelances'
                 }
             }
         }
-  
-        stage ("Run docker compose") {
+        stage("Generate backend image") {
             steps {
-                 dir("PDS-Projet"){
-                    sh " docker compose up -d"
-                }                
+                dir("PDS-Projet/PdsBack") {
+                    sh "mvn clean install"
+                    sh "docker build -t dalibm98/gestion_freelances ."
+                }
+            }
+        }
+        stage('Push image to hub') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
+                        sh 'docker login -u dalibm98 -p ${dockerhubpwd}'
+                    }
+                    sh 'docker push dalibm98/frontend-app'
+                    sh 'docker push dalibm98/gestion_freelances'
+                }
             }
         }
     }

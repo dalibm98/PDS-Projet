@@ -18,7 +18,14 @@ pipeline {
            stage ("Generate frontend image") {
             steps {
                  dir("PDS-Projet/PdsFront"){
-                    sh "docker build -t frontend ."
+                    sh "docker build -t dalibm98/frontend-app ."
+                }                
+            }
+        }
+             stage ("Generate backend image") {
+            steps {
+                 dir("PDS-Projet/PdsFront"){
+                    sh "docker build -t dalibm98/ ."
                 }                
             }
         }

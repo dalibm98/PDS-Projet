@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --force
 COPY . .
+EXPOSE 4200
 RUN npm run build --force
 
 # Stage 2: Run with Nginx

@@ -25,7 +25,8 @@ pipeline {
              stage ("Generate backend image") {
             steps {
                  dir("PDS-Projet/PdsFront"){
-                    sh "docker build -t dalibm98/ ."
+                     sh "mvn  clean install"
+                    sh "docker build -t dalibm98/gestion_freelances ."
                 }                
             }
         }

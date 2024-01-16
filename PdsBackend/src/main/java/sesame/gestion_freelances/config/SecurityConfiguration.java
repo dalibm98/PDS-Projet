@@ -74,9 +74,9 @@ public class SecurityConfiguration {
     public CorsFilter corsFilter() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:4200"); //***********
+        config.addAllowedOrigin("http://localhost:4200","http://10.105.176.23:32410","http://10.105.176.23:8"); //***********
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://10.105.176.23:32410","http://10.105.176.23:80"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         source.registerCorsConfiguration("/**", config);

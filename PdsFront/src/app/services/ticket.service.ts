@@ -8,7 +8,7 @@ import { TicketStatus } from '../models/TicketStatus';
   providedIn: 'root'
 })
 export class TicketService {
-  private apiUrl = 'http://10.244.192.1:8080/api/v1/tickets';
+  private apiUrl = 'http://10.244.192.2:8080/api/v1/tickets';
 
   constructor(private http: HttpClient) {}
 

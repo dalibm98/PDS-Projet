@@ -77,11 +77,10 @@ public class SecurityConfiguration {
         config.addAllowedOrigin("http://localhost:4200");
 config.addAllowedOrigin("http://10.105.176.23:32410");
 config.addAllowedOrigin("http://10.105.176.23:80");
-config.addAllowedOrigin("http://angular-service:80");
-config.addAllowedOrigin("http://angular-service:32410");
+config.addAllowedOrigin("http://10.244.192.3:80");
 
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://10.105.176.23:32410","http://10.105.176.23:80","http://angular-service:80","http://angular-service:32410"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:4200","http://10.105.176.23:32410","http://10.105.176.23:80","http://angular-service:80","http://angular-service:32410","http://10.244.192.3:80"));
         config.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         source.registerCorsConfiguration("/**", config);

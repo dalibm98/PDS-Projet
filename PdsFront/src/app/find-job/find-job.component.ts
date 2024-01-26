@@ -49,12 +49,12 @@ onFormSubmit(formValue: any) {
   const type = this.filtre.type;
 
   if (type === 'offre') {
-    this.http.get<any[]>('http://110.108.122.73:8080/api/v1/rechercher-offres', { params: formValue })
+    this.http.get<any[]>('http://10.244.192.1:8080/api/v1/rechercher-offres', { params: formValue })
       .subscribe(resultats => {
         this.offresFiltres = resultats;
       });
   } else if (type === 'projet') {
-    this.http.get<any[]>('http://110.108.122.73:8080/api/v1/rechercher-projets', { params: formValue })
+    this.http.get<any[]>('http://10.244.192.1:8080/api/v1/rechercher-projets', { params: formValue })
       .subscribe(resultats => {
         this.projetsFiltres = resultats;
       });

@@ -7,7 +7,7 @@ import { DemandeRealisation } from '../models/demande-realisation';
   providedIn: 'root'
 })
 export class DemandeProjetService {
-  private apiRoot = 'http://110.108.122.73:8080/api/v1'; 
+  private apiRoot = 'http://10.244.192.1:8080/api/v1'; 
 
   constructor(private http: HttpClient) {}
 

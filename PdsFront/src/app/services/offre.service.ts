@@ -11,7 +11,7 @@ import { Page } from '../models/page';
   providedIn: 'root',
 })
 export class OffreService {
-  private apiUrl = 'http://110.108.122.73:8080/api/v1';
+  private apiUrl = 'http://10.244.192.1:8080/api/v1';
 
   constructor(private http: HttpClient) {}
 

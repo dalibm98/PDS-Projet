@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { DemandeRecrutement } from '../models/demande-recrutement';
 
 
-const apiRoot = 'http://localhost:8080/api/v1';
+const apiRoot = 'http://110.108.122.73:8080/api/v1';
 
 @Injectable({
   providedIn: 'root',
